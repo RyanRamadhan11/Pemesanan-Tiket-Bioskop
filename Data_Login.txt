@@ -1,0 +1,27 @@
+Admin :
+    username : ryan
+    password : ryan
+
+Staff :
+    username : zidan
+    password : zidan
+
+pembeli :
+    username : yuli
+    password : yuli
+
+    <?php
+/* Connect to a MySQL database using driver invocation */
+$dsn = 'mysql:dbname=ryan_tiket_bioskop;host=localhost';
+$user = 'ramadhanryan676';
+$password = 'ryan123!';
+
+try{    
+    $dbh = new PDO($dsn, $user, $password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //echo 'Sukses Koneksi database';
+}catch (PDOException $e){
+    echo 'Terjadi kesalahan saat koneksi/query dgn sebab '.$e->getMessage();
+}
+
+?>
